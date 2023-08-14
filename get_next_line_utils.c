@@ -37,51 +37,25 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ((void *)allocated_mem);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_char	*ft_new_node(char c)
 {
-	char	*new_str;
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t	index;
+	t_char	*new_node;
 
-	if (s1 == NULL || s2 == NULL)
+	new_node = (t_char *)ft_calloc(1, sizeof(t_char));
+	if (new_node == NULL)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	new_str = ft_calloc((s1_len + s2_len + 1), sizeof(char));
-	if (new_str == NULL)
-		return (NULL);
-	index = 0;
-	while (index < s1_len)
-	{
-		new_str[index] = s1[index];
-		index++;
-	}
-	index = 0;
-	while (index < s2_len)
-	{
-		new_str[s1_len + index] = s2[index];
-		index++;
-	}
-	free((char *)s1);
-	return (new_str);
+	new_node->act_char = c;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-char	*ft_strchar(char *s, int c)
+t_list	*ft_new_list(void)
 {
-	size_t	index;
-	char	*first_occ;
+	t_list	*new_list;
 
-	index = 0;
-	first_occ = NULL;
-	while (index <= ft_strlen(s))
-	{
-		if (s[index] == (unsigned char) c)
-		{
-			first_occ = (char *)&s[index];
-			return (first_occ);
-		}
-		index++;
-	}
-	return (first_occ);
+	new_list = (t_list *)ft_calloc(1, sizeof(t_list));
+	if (new_list == NULL)
+		return (NULL);
+	new_list->head = NULL;
+	return (new_list);
 }
