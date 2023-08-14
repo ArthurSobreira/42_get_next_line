@@ -12,27 +12,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include "get_next_line.h"
 
-int main(int argc, char const *argv[])
+int main(void)
 {
-	const char	*file_name = argv[1];
+	const char	*file_name = "teste2.txt";
 	char		*c_line;
-	FILE		*file;
+	int			file_descriptor;
 	int			counter;
 
-	if (argc != 2)
+	file_descriptor = open(file_name, O_RDONLY);
+	if (file_descriptor < 0)
 	{
-		printf("Please, enter a valid file name.\n");
-		return (0);
+		printf("Error opening file %s\n", file_name);
+		return (1);
 	}
-	file = fopen(file_name, "r");
-
-	while ((c_line = get_next_line(file->_fileno)) != NULL)
+	while ((c_line = get_next_line(file_descriptor)) != NULL)
 	{
 		printf("Line %i -> %s", counter++, c_line);
 		free(c_line);
 	}
-	fclose(file);
+	close(file_descriptor);
 	return (0);
 }
