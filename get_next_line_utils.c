@@ -12,27 +12,41 @@
 
 #include "get_next_line.h"
 
-t_char	*ft_new_node(char c)
+size_t	ft_strlen(const char *s)
 {
-	t_char	*new_node;
+	size_t	lenght;
 
-	new_node = (t_char *)ft_calloc(1, sizeof(t_char));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->act_char = c;
-	new_node->next = NULL;
-	return (new_node);
+	lenght = 0;
+	while (s[lenght] != '\0')
+	{
+		lenght++;
+	}
+	return (lenght);
 }
 
-t_list	*ft_new_list(void)
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*new_list;
+	size_t	index;
+	char	*first_occ;
 
-	new_list = (t_list *)ft_calloc(1, sizeof(t_list));
-	if (new_list == NULL)
+	if (s == NULL)
 		return (NULL);
-	new_list->head = NULL;
-	return (new_list);
+	index = 0;
+	first_occ = NULL;
+	while (s[index] != '\0')
+	{
+		if (s[index] == (unsigned char)c)
+		{
+			first_occ = (char *)&s[index];
+			return (first_occ);
+		}
+		index++;
+	}
+	if ((unsigned char)c == '\0')
+	{
+		first_occ = (char *)&s[index];
+	}
+	return (first_occ);
 }
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -60,3 +74,29 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ((void *)allocated_mem);
 }
 
+char	*ft_strjoin(char *s1, char *s2)
+{
+	int		result_index;
+	int		index;
+	char	*result;
+
+	if (s1 == NULL)
+ 		s1 = ft_calloc(1, sizeof(char));
+	result = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	result_index = 0;
+	index = 0;
+	while (s1[index])
+	{
+		result[result_index++] = s1[index++];
+	}
+	index = 0;
+	while (s2[index])
+	{
+		result[result_index++] = s2[index++];
+	}
+	result[result_index] = '\0';
+	free((char *)s1);
+	return (result);
+}
