@@ -29,6 +29,7 @@ int main(void)
 		return (1);
 	}
 	printf("%s", get_next_line(file_descriptor));
+	printf("%s", get_next_line(file_descriptor));
 	/* while ((c_line = get_next_line(file_descriptor)) != NULL)
 	{
 		printf("Line %i -> %s", counter++, c_line);
