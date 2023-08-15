@@ -19,21 +19,11 @@
 
 # include <unistd.h>
 # include <stdlib.h>
- 
-typedef struct s_node
-{
-	char			act_char;
-	struct s_node	*next;
-}					t_char;
 
-typedef struct s_list
-{
-	t_char	*head;
-}			t_list;
-
-t_char	*ft_new_node(char c);
-t_list	*ft_new_list(void);
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
 
 #endif
