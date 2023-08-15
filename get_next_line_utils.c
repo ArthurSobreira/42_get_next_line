@@ -51,10 +51,10 @@ char	*ft_strchr(const char *s, int c)
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void 	*allocated_mem;
-	char 	*temp;
-	size_t 	full_size;
-	size_t 	index;
+	void	*allocated_mem;
+	char	*temp;
+	size_t	full_size;
+	size_t	index;
 
 	full_size = nmemb * size;
 	if (nmemb == 0 || size == 0)
@@ -81,7 +81,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*result;
 
 	if (s1 == NULL)
- 		s1 = ft_calloc(1, sizeof(char));
+		s1 = ft_calloc(1, sizeof(char));
 	result = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
