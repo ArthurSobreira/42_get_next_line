@@ -64,7 +64,7 @@ char	*get_next_line(int fd)
         rest++;
 	}
 	
-	int node_count = 0;
+	/* int node_count = 0;
     current_node = list->head;
     while (current_node != NULL)
     {
@@ -72,7 +72,7 @@ char	*get_next_line(int fd)
 		//printf("%c", current_node->act_char);
         current_node = current_node->next;
     }
-	printf("%d\n", node_count);
+	printf("%d\n", node_count); */
     // line = (char *)malloc((node_count + 1) * sizeof(char));
     // if (line == NULL)
     //     return (NULL);

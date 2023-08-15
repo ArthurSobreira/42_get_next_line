@@ -28,11 +28,12 @@ int main(void)
 		printf("Error opening file %s\n", file_name);
 		return (1);
 	}
-	while ((c_line = get_next_line(file_descriptor)) != NULL)
+	printf("%s", get_next_line(file_descriptor));
+	/* while ((c_line = get_next_line(file_descriptor)) != NULL)
 	{
 		printf("Line %i -> %s", counter++, c_line);
 		free(c_line);
-	}
+	} */
 	close(file_descriptor);
 	return (0);
 }

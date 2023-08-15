@@ -12,6 +12,29 @@
 
 #include "get_next_line.h"
 
+t_char	*ft_new_node(char c)
+{
+	t_char	*new_node;
+
+	new_node = (t_char *)ft_calloc(1, sizeof(t_char));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->act_char = c;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+t_list	*ft_new_list(void)
+{
+	t_list	*new_list;
+
+	new_list = (t_list *)ft_calloc(1, sizeof(t_list));
+	if (new_list == NULL)
+		return (NULL);
+	new_list->head = NULL;
+	return (new_list);
+}
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void 	*allocated_mem;
@@ -37,25 +60,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ((void *)allocated_mem);
 }
 
-t_char	*ft_new_node(char c)
-{
-	t_char	*new_node;
-
-	new_node = (t_char *)ft_calloc(1, sizeof(t_char));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->act_char = c;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-t_list	*ft_new_list(void)
-{
-	t_list	*new_list;
-
-	new_list = (t_list *)ft_calloc(1, sizeof(t_list));
-	if (new_list == NULL)
-		return (NULL);
-	new_list->head = NULL;
-	return (new_list);
-}
