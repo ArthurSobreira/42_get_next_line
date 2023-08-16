@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <fcntl.h>
 #include "get_next_line.h"
 
-int main(void)
+int	main(void)
 {
 	const char	*file_name = "teste2.txt";
 	char		*c_line;
@@ -28,13 +27,11 @@ int main(void)
 		printf("Error opening file %s\n", file_name);
 		return (1);
 	}
-	printf("%s", get_next_line(file_descriptor));
-	printf("%s", get_next_line(file_descriptor));
-	/* while ((c_line = get_next_line(file_descriptor)) != NULL)
+	while ((c_line = get_next_line(file_descriptor)) != NULL)
 	{
 		printf("Line %i -> %s", counter++, c_line);
 		free(c_line);
-	} */
+	}
 	close(file_descriptor);
 	return (0);
 }
