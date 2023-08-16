@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:06:17 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/09 13:51:32 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:00:44 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	lenght;
 
 	lenght = 0;
-	while (s[lenght] != '\0')
+	while (s[lenght] != NULL_BYTE)
 	{
 		lenght++;
 	}
@@ -33,7 +33,7 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 	index = 0;
 	first_occ = NULL;
-	while (s[index] != '\0')
+	while (s[index] != NULL_BYTE)
 	{
 		if (s[index] == (unsigned char)c)
 		{
@@ -42,7 +42,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		index++;
 	}
-	if ((unsigned char)c == '\0')
+	if ((unsigned char)c == NULL_BYTE)
 	{
 		first_occ = (char *)&s[index];
 	}
@@ -68,7 +68,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	temp = (char *)allocated_mem;
 	while (index < full_size)
 	{
-		temp[index] = '\0';
+		temp[index] = NULL_BYTE;
 		index++;
 	}
 	return ((void *)allocated_mem);
@@ -96,7 +96,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		result[result_index++] = s2[index++];
 	}
-	result[result_index] = '\0';
+	result[result_index] = NULL_BYTE;
 	free((char *)s1);
 	return (result);
 }
