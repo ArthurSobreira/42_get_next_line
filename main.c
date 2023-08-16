@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:41:02 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/16 11:20:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:26:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 #include <stdio.h>
 #include <fcntl.h>
-#include "get_next_line.h"
 
 int	main(void)
 {
