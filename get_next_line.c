@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:06:14 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/16 11:16:46 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:29:59 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_current_line(char *total_buffer);
+static char	*ft_get_current_line(char *total_buffer);
 static char	*ft_get_rest(char *total_buffer);
 
 // static char	*ft_get_lines(int fd, char *total_buffer)
@@ -62,12 +62,12 @@ char	*get_next_line(int fd)
 	}
 	free(temp_buffer);
 	current_line = NULL;
-	current_line = ft_current_line(total_buffer);
+	current_line = ft_get_current_line(total_buffer);
 	total_buffer = ft_get_rest(total_buffer);
 	return (current_line);
 }
 
-static char	*ft_current_line(char *total_buffer)
+static char	*ft_get_current_line(char *total_buffer)
 {
 	char		*line;
 	int			count;
