@@ -6,20 +6,25 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:01:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/09 10:05:11 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:24:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
-
 # include <stdlib.h>
 # include <unistd.h>
 
+// Constants Declaration
+# define NEW_LINE '\n'
+# define NULL_BYTE '\0'
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+// Functions Declaration
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strjoin(char *s1, char *s2);
