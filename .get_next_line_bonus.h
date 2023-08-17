@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:32:49 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/17 11:39:12 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/17 16:12:59 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 // Constants Declaration
 # define NEW_LINE '\n'
 # define NULL_BYTE '\0'
-# define FD_LIMIT 1024
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

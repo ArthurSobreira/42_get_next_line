@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:41:02 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/16 11:26:39 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/17 16:00:31 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	const char	*file_name = "teste2.txt";
+	const char	*file_name = "teste.txt";
 	char		*c_line;
 	int			file_descriptor;
 	int			counter;
