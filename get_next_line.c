@@ -22,10 +22,14 @@ char	*get_next_line(int fd)
 	char		*current_line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
+	{
 		return (NULL);
+	}
 	total_buffer = ft_fill_buffer(fd, total_buffer);
 	if (total_buffer == NULL)
+	{
 		return (NULL);
+	}
 	current_line = NULL;
 	current_line = ft_get_current_line(total_buffer);
 	total_buffer = ft_get_buffer_rest(total_buffer);
