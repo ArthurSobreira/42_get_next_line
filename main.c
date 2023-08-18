@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	const char	*file_name = "teste.txt";
+	const char	*file_name = "test2.txt";
 	char		*c_line;
 	int			file_descriptor;
 	int			counter;
