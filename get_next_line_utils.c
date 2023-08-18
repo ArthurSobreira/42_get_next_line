@@ -17,11 +17,29 @@ size_t	ft_strlen(const char *s)
 	size_t	lenght;
 
 	lenght = 0;
-	while (s[lenght] != NULL_BYTE)
+	while (s[lenght] != '\0')
 	{
 		lenght++;
 	}
 	return (lenght);
+}
+
+char	*ft_strncpy(char *dest, const char *src, size_t n)
+{
+	size_t	index;
+
+	index = 0;
+	while ((src[index] != '\0') && (index < n))
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	while (index < n)
+	{
+		dest[index] = '\0';
+		index++;
+	}
+	return (dest);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -33,7 +51,7 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 	index = 0;
 	first_occ = NULL;
-	while (s[index] != NULL_BYTE)
+	while (s[index] != '\0')
 	{
 		if (s[index] == (unsigned char)c)
 		{
@@ -42,36 +60,31 @@ char	*ft_strchr(const char *s, int c)
 		}
 		index++;
 	}
-	if ((unsigned char)c == NULL_BYTE)
+	if ((unsigned char)c == '\0')
 	{
 		first_occ = (char *)&s[index];
 	}
 	return (first_occ);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*allocated_mem;
-	char	*temp;
-	size_t	full_size;
 	size_t	index;
+	char	*new_string;
 
-	full_size = nmemb * size;
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (full_size > __INT_MAX__ || full_size / nmemb != size)
-		return (NULL);
-	allocated_mem = (void *)malloc(full_size);
-	if (allocated_mem == NULL)
-		return (NULL);
+	new_string = malloc(ft_strlen(s) + 1);
 	index = 0;
-	temp = (char *)allocated_mem;
-	while (index < full_size)
+	if (new_string == NULL)
 	{
-		temp[index] = NULL_BYTE;
+		return (NULL);
+	}
+	while (s[index])
+	{
+		new_string[index] = s[index];
 		index++;
 	}
-	return ((void *)allocated_mem);
+	new_string[index] = '\0';
+	return (new_string);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -81,7 +94,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*result;
 
 	if (s1 == NULL)
-		s1 = ft_calloc(1, sizeof(char));
+		s1 = ft_strdup("");
 	result = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
@@ -96,7 +109,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		result[result_index++] = s2[index++];
 	}
-	result[result_index] = NULL_BYTE;
+	result[result_index] = '\0';
 	free((char *)s1);
 	return (result);
 }
