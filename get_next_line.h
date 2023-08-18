@@ -16,19 +16,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// Constants Declaration
-# define NEW_LINE '\n'
-# define NULL_BYTE '\0'
-
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
 
-// Functions Declaration
+// Functions Prototypes
 char	*get_next_line(int fd);
-void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *s);
 
 #endif
