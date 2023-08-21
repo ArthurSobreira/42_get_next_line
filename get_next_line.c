@@ -51,6 +51,7 @@ static char	*ft_fill_buffer(int fd, char *total_buffer)
 		if (byte_nb < 0)
 		{
 			free(temp_buffer);
+			free(total_buffer);
 			return (NULL);
 		}
 		temp_buffer[byte_nb] = '\0';
