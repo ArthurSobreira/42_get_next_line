@@ -72,12 +72,12 @@ static char	*ft_get_current_line(char *total_buffer)
 	newline_position = ft_strchr(total_buffer, '\n');
 	if (newline_position != NULL)
 	{
-		line_len = newline_position - total_buffer;
+		line_len = 0;
+		while (&total_buffer[line_len] != newline_position)
+			line_len++;
 	}
 	else
-	{
 		line_len = ft_strlen(total_buffer);
-	}
 	current_line = malloc((line_len + 2) * sizeof(char));
 	if (current_line == NULL)
 		return (NULL);
