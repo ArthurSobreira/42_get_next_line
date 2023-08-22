@@ -30,7 +30,7 @@
 git clone git@github.com:ArthurSobreira/42_get_next_line.git
 ```
 
-* Once cloned, compile the program with the following command (the value of <i>BUFFER_SIZE</i> can be changed if you prefer):
+* Once cloned, compile the program with the following command (the value of <strong><i>BUFFER_SIZE</i></strong> can be changed if you prefer):
 
 ```c
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c src/get_next_line.c utils/get_next_line_utils.c include/get_next_line.h  
