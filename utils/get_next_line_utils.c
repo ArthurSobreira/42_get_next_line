@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:06:17 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/22 12:02:30 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:00:32 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	lenght;
+	size_t	length;
 
-	lenght = 0;
-	while (s[lenght] != '\0')
+	length = 0;
+	while (s[length] != '\0')
 	{
-		lenght++;
+		length++;
 	}
-	return (lenght);
+	return (length);
 }
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
