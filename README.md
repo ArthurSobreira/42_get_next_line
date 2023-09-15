@@ -36,7 +36,7 @@ git clone git@github.com:ArthurSobreira/42_get_next_line.git
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c src/get_next_line.c utils/get_next_line_utils.c include/get_next_line.h  
 ```
 
-* Running the code, the result should look something like this:
+* Running the binary, the result should look something like this:
 
 ```
 Line 1 -> ██╗░░██╗███████╗██╗░░░░░██╗░░░░░░█████╗░  ░██╗░░░░░░░██╗░█████╗░██████╗░██╗░░░░░██████╗░
